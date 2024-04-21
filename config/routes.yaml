@@ -3,3 +3,35 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+
+app_event_index:
+    path: /
+    controller: App\Controller\EventController::index
+    methods: ['GET', 'POST']
+
+app_event_new:
+    path: /event/new
+    controller: App\Controller\EventController::new
+    methods: ['GET', 'POST']
+
+app_event_show:
+    path: /event/{id}
+    controller: App\Controller\EventController::show
+    methods: ['GET']
+
+app_event_edit:
+    path: /event/{id}/edit
+    controller: App\Controller\EventController::edit
+    methods: ['GET', 'POST']
+
+app_event_delete:
+    path: /event/{id}
+    controller: App\Controller\EventController::delete
+    methods: ['POST']
+
+app_event_filtered:
+    path: /event/filtered/{type}
+    controller: App\Controller\EventController::showEventsByType
+    methods: ['GET']
